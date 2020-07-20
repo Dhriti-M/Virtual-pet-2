@@ -1,15 +1,15 @@
 class Food {
 
-    constructor(foodStock,lastfeed){
+    constructor(foodStock,lastFeed){
     this.foodStock=foodStock;
-    this
-    this.image = loadImage("images/Milk");
+    this.lastFeed=lastFeed;
+    this.image = loadImage("images/Milk.png");
     }
 
  getFoodStock(){
  var foodref = database.ref('Food');
  foodref.on("value",function(data){
-    foodStock=data.val();
+    this.foodStock=data.val();
  })
  }
 
