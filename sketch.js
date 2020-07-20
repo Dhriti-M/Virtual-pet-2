@@ -1,7 +1,7 @@
 //Create variables here
 var dog, happyDog, database, foodS, FoodStock;
 var feed,addFood,foodObj;
-var lastFed,fedTime;
+var lastFeed,fedTime;
 
 function preload()
 {
@@ -39,7 +39,7 @@ foodObj = new Food();
 
 fedTime=database.ref('FeedTime');
 fedTime.on("value",function(data){
-  lastFed=data.val();
+  lastFeed=data.val();
 })
 
 
@@ -72,14 +72,14 @@ function draw() {
 
           fill(255,255,254);
           textSize(15);
-          if(lastFed>=12){
-            text("Last Feed : ",lastFed%12 + "PM", 350 ,30);
+          if(lastFeed>=12){
+            text("Last Feed : ",lastFeed%12 + "PM", 350 ,30);
         }
-        else if (lastFed===0){
+        else if (lastFeed===0){
           text("Last Feed : 12 AM",350,30);
         }
         else {
-        text ("Last Feed : " + lastFed + "AM",350,30);
+        text ("Last Feed : " + lastFeed + "AM",350,30);
         }
 
 
